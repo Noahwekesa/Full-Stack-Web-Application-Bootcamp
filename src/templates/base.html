@@ -1,0 +1,22 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>{% block title %}{% endblock %}</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="{% block description %}{% endblock %}">
+    <meta name="robots" content="{% block robots %}{% endblock %}">
+    <meta name="keywords" content="{% block keywords %}{% endblock %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/signup.css' %}" />
+  </head>
+  <body>
+    {% include "navbar.html" %}
+    
+    {% block content %}
+    {% endblock %}
+
+    <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
+  </body>
+</html>
