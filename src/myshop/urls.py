@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from products.views import HomePageView
+from products.views import HomePageView, ProductDetailView
 from users.views import SignUpView
 from django.contrib.auth import views as auth_views
 from django.conf import settings
@@ -32,4 +32,6 @@ urlpatterns = [
     path('login/', auth_views.LoginView.as_view(template_name="users/login.html"), name='login'),
     #logout
     path('logout', auth_views.LogoutView.as_view(next_page="/"), name='logout'),
+    #product detail views
+    path('product/<int:pk>/', ProductDetailView.as_view(), name='product-detail'), 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

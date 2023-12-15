@@ -2,13 +2,9 @@
 
 {% load static %}
 
-{% block title %}
-home - my shop
-{% endblock title %}
+{% block title %} home - my shop {% endblock title %}
 
-{% block description %}
-this is my description
-{% endblock description %}
+{% block description %} this is my description {% endblock description %}
 
 
 {% block content %}
@@ -47,7 +43,7 @@ this is my description
             <div style="padding:20px 25px">
       <h3>{{product.title}}</h3>
       <p>{{product.description}}</p>
-                <a href="">View Product</a>
+      <a href="{% url 'product-detail' product.id %}">View Product</a>
             </div>
         </div>
   {% endfor %}
@@ -57,7 +53,7 @@ this is my description
     <footer>
         <h2>This is my footer.</h2>
     </footer>
-{% endblock %}
+{% endblock content %}
 
 
 
