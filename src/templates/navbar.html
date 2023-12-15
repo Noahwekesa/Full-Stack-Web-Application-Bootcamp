@@ -9,9 +9,16 @@
     <a href="{% url 'home' %}">Home</a>
     <a href="shop.html">Shop</a>
     <a href="contact.html" id="selected">Contact</a>
+    
+    {% if user.is_authenticated %}
     <a href="profile.html">Profile</a>
-    <a href="signup.html">Signup</a>
+    <a href="{% url 'logout' %}">Log Out</a>
+    
+    {% else %}
+    <a href="{% url 'login' %}">Log In</a>
+    <a href="{% url 'signup' %}">Signup</a>
 
+    {% endif %}
     <svg onclick="darkMode()" viewBox="0 0 512 512" width="25px" id="sun-icon">
       <g id="Sun">
         <path

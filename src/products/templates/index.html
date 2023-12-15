@@ -12,9 +12,7 @@ this is my description
 
 
 {% block content %}
-
-    <!-- ***************** main content ***************** -->
-    <section id="intro">
+<section id="intro">
         <div style="width: 50%;">
             <h1>Best Clothing Quality</h1>   
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis porro quam fugiat accusantium ab velit tenetur perspiciatis autem, ipsa obcaecati at blanditiis? Unde, consectetur itaque nemo modi consequuntur obcaecati accusantium?</p>
@@ -22,10 +20,10 @@ this is my description
         </div>
 
         <video autoplay>
-    <source  src="{% static 'video/intro-video.mp4' %}" type="video/mp4">
+    <source src="{% static 'video/intro-video.mp4' %}">
         </video>
     </section>
-    
+
 
     <!-- ***************** Category ***************** 
     <nav id="nav-cat">
@@ -35,45 +33,75 @@ this is my description
         <a>Shoes</a>
     </nav>
     -->
-    
+
     <!-- ***************** Product card ***************** -->
     <div class="product-nav">
         <h3>Suits</h3>
         <a href="suits.html">View all suits</a>
     </div>
-  </div>
-
+    <main id="products-intro">
+  {% for product in products %}      
   <div class="product-card">
-    <img src="image/suit-2.png" class="product-img" />
-    <div style="padding: 20px 25px">
-      <h3>Product 2</h3>
-      <p>This is just a simple description for our product.</p>
-      <a href="">View Product</a>
-    </div>
-  </div>
+            <div class="review-con"><p>Reviews 4.8⭐</p></div>
+    <img src="{{product.image.url}}" class="product-img">
+            <div style="padding:20px 25px">
+      <h3>{{product.title}}</h3>
+      <p>{{product.description}}</p>
+                <a href="">View Product</a>
+            </div>
+        </div>
+  {% endfor %}
+    </main>
 
-  <div class="product-card">
-    <img src="image/suit-3.png" class="product-img" />
-    <div style="padding: 20px 25px">
-      <h3>Product 3</h3>
-      <p>This is just a simple description for our product.</p>
-      <a href="">View Product</a>
-    </div>
-  </div>
-
-  <div class="product-card">
-    <img src="image/suit-4.png" class="product-img" />
-    <div style="padding: 20px 25px">
-      <h3>Product 4</h3>
-      <p>This is just a simple description for our product.</p>
-      <a href="">View Product</a>
-    </div>
-  </div>
-</main>
-
-<!-- ***************** Footer ***************** -->
-<footer>
-  <h2>This is my footer.</h2>
-</footer>
+    <!-- ***************** Footer ***************** -->
+    <footer>
+        <h2>This is my footer.</h2>
+    </footer>
 {% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

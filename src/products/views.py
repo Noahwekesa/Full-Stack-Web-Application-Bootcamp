@@ -1,5 +1,7 @@
-from django.shortcuts import render
+from django.views.generic import ListView
+from .models import Product
 
-# Create  views here.
-def homepage(request):
-    return render(request, 'index.html')
+class HomePageView(ListView):
+    template_name = 'index.html'
+    model = Product
+    context_object_name = 'products'

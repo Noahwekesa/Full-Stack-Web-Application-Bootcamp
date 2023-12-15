@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block description %} you can create an account on myshop store. {% endblock %}
+
+{% block robots %} index, follow {% endblock %}
+
+{%block keywords %} suits, shirts, myshop{% endblock %}
+
+{% block title %} Log in Your Account {% endblock %}
+
+{% block content %}
+<form method="POST">
+  {% csrf_token %}
+  {{ form }}
+  <div>
+    <button class="btn btn-outline-info">Login</button>
+  </div>
+</form>
+
+{% endblock %}

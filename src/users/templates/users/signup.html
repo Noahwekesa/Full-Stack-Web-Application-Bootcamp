@@ -3,9 +3,10 @@
 
 {% block robots %} index, follow {% endblock %}
 {% block keywords %} signup, myshop{% endblock %}
-{% block title %} Signup {% endblock %}
+{% block title %} create account {% endblock %}
 {% block content %}
-<form method="post">
+<form method="POST">
+  {% csrf_token %}
   <label for="name">Full Name:</label><br>
   <input class="field" type="text" id="name" required><br>
 
